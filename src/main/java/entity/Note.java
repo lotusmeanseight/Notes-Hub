@@ -2,6 +2,7 @@ package entity;
 
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.Relationship;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -18,6 +19,7 @@ public class Note {
     private String content;
     private List<Tag> tags;
     @NotNull
+    @Relationship(type = "BELONGS_TO")
     private User creator;
 
     public Note(User creator, String title,String content){

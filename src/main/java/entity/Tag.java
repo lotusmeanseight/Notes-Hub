@@ -18,10 +18,13 @@ public class Tag {
     private List<Category> categories;
     @NotNull
     private User creator;
-    @NotNull
     private Note note;
 
-    public Tag(){}
+    public Tag(String name, List<Category> categories, User creator){
+        this.name = name;
+        this.categories = categories;
+        this.creator = creator;
+    }
 
     public String getId() {
         return id;
