@@ -1,8 +1,8 @@
 package entity;
 
-import org.jetbrains.annotations.NotNull;
+import org.neo4j.ogm.annotation.Id;
 
-import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class Hub {
@@ -12,10 +12,17 @@ public class Hub {
     @NotNull
     private String name;
     @NotNull
-    private List<Category> category;
+    private List<Category> categories;
     private int memberLimit;
+    @NotNull
+    private User admin;
     private List<User> members;
 
+    public Hub(User admin, String name, List<Category> categories){
+        this.admin = admin;
+        this.name = name;
+        this.categories = categories;
+    }
 
     public Long getId() {
         return id;
@@ -49,12 +56,12 @@ public class Hub {
         this.members = members;
     }
 
-    public List<Category> getCategory() {
-        return category;
+    public List<Category> getCategories() {
+        return categories;
     }
 
-    public void setCategory(List<Category> category) {
-        this.category = category;
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 
     @Override
@@ -66,14 +73,22 @@ public class Hub {
 
         if (id != null ? !id.equals(hub.id) : hub.id != null) return false;
         if (name != null ? !name.equals(hub.name) : hub.name != null) return false;
-        return category != null ? category.equals(hub.category) : hub.category == null;
+        return categories != null ? categories.equals(hub.categories) : hub.categories == null;
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (category != null ? category.hashCode() : 0);
+        result = 31 * result + (categories != null ? categories.hashCode() : 0);
         return result;
+    }
+
+    public User getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(User admin) {
+        this.admin = admin;
     }
 }

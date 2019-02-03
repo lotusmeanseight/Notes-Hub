@@ -1,11 +1,12 @@
 package entity;
 
-import org.jetbrains.annotations.NotNull;
+import org.neo4j.ogm.annotation.Id;
+import org.neo4j.ogm.annotation.NodeEntity;
 
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
+@NodeEntity
 public class User {
 
     @Id
@@ -19,7 +20,6 @@ public class User {
     private String password;
     @NotNull
     private String email;
-    @OneToMany
     private List<Note> notes;
 
     public User(){
