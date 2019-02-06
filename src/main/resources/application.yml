@@ -1,3 +1,4 @@
-neo4j.ogm.URI: bolt://localhost:7687
-neo4j.ogm.user: neo4j
-neo4j.ogm.password:
+neo4j:
+  host: bolt://localhost:7687
+  user: neo4j
+  password:
