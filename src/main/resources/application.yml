@@ -1,4 +1,12 @@
 neo4j:
   host: bolt://localhost:7687
   user: neo4j
-  password:
+  password: ?
+spring.application.name: NotesHub
+spring.cloud.vault:
+  host: localhost
+  port: 8200
+  scheme: https
+  authentication: TOKEN
+  token: ${VAULT_TOKEN}
+
