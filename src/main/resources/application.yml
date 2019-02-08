@@ -1,12 +1,25 @@
-neo4j:
-  host: bolt://localhost:7687
-  user: neo4j
-  password: ?
-spring.application.name: NotesHub
-spring.cloud.vault:
-  host: localhost
-  port: 8200
-  scheme: https
-  authentication: TOKEN
-  token: ${VAULT_TOKEN}
+info:
+  component: Config Server
 
+
+spring:
+  jmx:
+    default-domain: cloud.config.server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri:
+            clone-on-start: true
+            searchPaths:
+server:
+  address: 0.0.0.0
+  port: ${application.port}
+
+noteshub:
+  configserver:
+    security:
+      basicAuth:
+        username: ${spring.cloud.config.username}
+        password: ${spring.cloud.config.password}
