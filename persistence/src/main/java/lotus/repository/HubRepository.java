@@ -1,6 +1,6 @@
 package lotus.repository;
 
-import entity.Hub;
+import lotus.entity.Hub;
 import org.springframework.data.repository.CrudRepository;
 
 public interface HubRepository extends CrudRepository<Hub, Long> {

@@ -1,5 +1,8 @@
 package lotus.entity;
 
+import org.neo4j.ogm.annotation.Id;
+
+import javax.validation.constraints.NotNull;
 import java.awt.*;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;

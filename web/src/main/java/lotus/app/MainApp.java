@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
 
 @SpringBootApplication
-@EnableNeo4jRepositories
+@EnableNeo4jRepositories(basePackages = {"lotus.entity"})
 public class MainApp {
 
     private static final Logger LOGGER = LogManager.getLogger();
