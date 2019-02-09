@@ -1,8 +1,8 @@
 package entity.repository;
 
-import entity.User;
+import entity.Hub;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepository extends CrudRepository<User, String> {
+public interface HubRepository extends CrudRepository<Hub, Long> {
 
 }

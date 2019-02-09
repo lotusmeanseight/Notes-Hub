@@ -1,11 +1,13 @@
 package entity;
 
-import org.jetbrains.annotations.NotNull;
+import org.neo4j.ogm.annotation.Id;
+import org.neo4j.ogm.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.Relationship;
 
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
+@NodeEntity
 public class User {
 
     @Id
@@ -19,7 +21,7 @@ public class User {
     private String password;
     @NotNull
     private String email;
-    @OneToMany
+    @Relationship(type = "BELONGS_TO", direction = Relationship.INCOMING)
     private List<Note> notes;
 
     public User(){

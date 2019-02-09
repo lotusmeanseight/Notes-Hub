@@ -1,31 +1,31 @@
 package entity;
 
-import org.jetbrains.annotations.NotNull;
+import org.neo4j.ogm.annotation.Id;
+import org.neo4j.ogm.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.Relationship;
 
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
+@NodeEntity
 public class Note {
 
     @Id
     private Long id;
-
     @NotNull
     private String title;
-
     private String shortDesc;
-
     @NotNull
     private String content;
-
     private List<Tag> tags;
-
     @NotNull
-    @ManyToOne
+    @Relationship(type = "BELONGS_TO")
     private User creator;
 
-    public Note(){
+    public Note(User creator, String title,String content){
+        this.creator = creator;
+        this.title = title;
+        this.content = content;
     }
 
     public Long getId() {
