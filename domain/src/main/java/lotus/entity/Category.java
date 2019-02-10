@@ -1,21 +1,32 @@
-package entity;
+package lotus.entity;
 
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import org.neo4j.ogm.annotation.Id;
+
+import javax.validation.constraints.NotNull;
 import java.awt.*;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Category {
 
     @Id
     private Long id;
+    @NotNull
     private String name;
     private String desc;
     private Color color;
-    @ManyToMany
     private List<Tag> tags;
 
-    public Category(){
+    public Category(String name){
+        this.name = name;
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        this.color = new Color(random.nextInt(0, 256), random.nextInt(0, 256),
+                random.nextInt(0, 256));
+    }
+
+    public Category(String name, String color){
+        this.name = name;
+        this.color = Color.decode(color);
     }
 
     public Long getId() {

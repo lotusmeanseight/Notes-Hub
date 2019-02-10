@@ -1,11 +1,12 @@
-package entity;
+package lotus.entity;
 
-import org.jetbrains.annotations.NotNull;
+import org.neo4j.ogm.annotation.Id;
+import org.neo4j.ogm.annotation.NodeEntity;
 
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
+@NodeEntity
 public class Tag {
 
     @Id
@@ -13,15 +14,17 @@ public class Tag {
     @NotNull
     private String name;
     private String desc;
-    @ManyToMany
     @NotNull
     private List<Category> categories;
     @NotNull
     private User creator;
-    @NotNull
     private Note note;
 
-    public Tag(){}
+    public Tag(String name, List<Category> categories, User creator){
+        this.name = name;
+        this.categories = categories;
+        this.creator = creator;
+    }
 
     public String getId() {
         return id;

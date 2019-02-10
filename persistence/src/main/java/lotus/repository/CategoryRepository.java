@@ -1,6 +1,6 @@
-package entity.repository;
+package lotus.repository;
 
-import entity.Category;
+import lotus.entity.Category;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CategoryRepository extends CrudRepository<Category, Long> {
