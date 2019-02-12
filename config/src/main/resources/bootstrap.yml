@@ -1,3 +1,10 @@
 spring:
   application:
     name: config-noteshub
+  cloud:
+    vault:
+      host: localhost
+      port: 8200
+      scheme: http
+      authentication: token
+      token: "00000000-0000-0000-0000-000000000000"
