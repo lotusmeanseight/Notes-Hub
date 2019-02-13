@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # start nodes
 echo "#### starting nodes..."
-for var in ${nodes_count} ; do
-    docker-machine start node${var}
+for (( i = ${start_node}; i <= ${end_node}; i++ )); do
+    docker-machine start node${i}
 done
 
 # clean docker client env

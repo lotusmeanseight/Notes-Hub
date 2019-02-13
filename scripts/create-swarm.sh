@@ -1,15 +1,15 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 echo "#### creating swarm..."
 
 # creating nodes
 
+start_node=1
+end_node=6
+
 echo "#### creating nodes..."
-nodes=(1..6)
-node_count=${#nodes[@]}
-for var in ${node_count} ; do
-    echo ${var}
-    docker-machine create -d virtualbox node${var}
+for (( i = ${start_node}; i <= ${end_node}; i++)); do
+    docker-machine create -d virtualbox node${i}
 done
 
 # leader node address
@@ -26,17 +26,18 @@ worker_token=$(docker swarm join-token worker -q)
 
 # connecting manager nodes
 echo "#### manager nodes joining..."
-manager_nodes=(2)
-for var in ${manager_nodes[@]} ; do
-    eval $(docker-machine env node${var})
+manager_node_start=${start_node}+1
+manager_node_end=2
+for (( i = ${manager_node_start}; i <= ${manager_node_end}; i++ )); do
+    eval $(docker-machine env node${i})
     docker swarm join --token ${manager_token} ${leader_addr}
 done
 
 # connecting worker nodes
 echo "#### worker nodes joining..."
-worker_nodes={${manager_nodes[@]}+1..${node_count}}
-for var in ${worker_nodes} ; do
-    eval $(docker-machine env node${var})
+worker_nodes={${manager_node_end}+1..${node_count}}
+for (( i = manager_node_end + 1; i <= ${end_node}; i++ )); do
+    eval $(docker-machine env node${i})
     docker swarm join --token ${worker_token} ${leader_addr}
 done
 
@@ -45,4 +46,5 @@ echo "#### cleaning docker env..."
 eval (docke-machine env -u)
 
 # export var
-export node_count
+export start_node
+export end_node
