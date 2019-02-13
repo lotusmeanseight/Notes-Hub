@@ -35,7 +35,7 @@ done
 
 # connecting worker nodes
 echo "#### worker nodes joining..."
-worker_nodes={${manager_node_end}+1..${node_count}}
+worker_nodes={${manager_node_end}+1..${end_node}}
 for (( i = manager_node_end + 1; i <= ${end_node}; i++ )); do
     eval $(docker-machine env node${i})
     docker swarm join --token ${worker_token} ${leader_addr}
