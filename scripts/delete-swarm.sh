@@ -2,7 +2,7 @@
 
 # clean docker client env
 echo "#### cleaning docker env..."
-eval (docke-machine env -u)
+eval (docker-machine env -u)
 
 # remove nodes
 echo "#### removing nodes..."
