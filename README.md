@@ -23,6 +23,7 @@ The concrete implementation regarding categories is still a topic to think about
 
 ## The current state of the project: Building Infrastructure
 - Creating bash and docker files for Spring Boot applications and others.
+- transitioning parts into gitlab because of the inbuilt private container registry?
 - Writing tests to see that containers are working properly
 - orchestration currently planned to be done with docker swarm, transition
 into kubernetes saved for much later.
