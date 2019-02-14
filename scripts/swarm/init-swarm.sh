@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source ./create-swarm.sh
+source create-swarm.sh
 
 # start nodes
 echo "#### starting nodes..."
