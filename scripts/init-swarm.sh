@@ -8,4 +8,4 @@ done
 
 # clean docker client env
 echo "#### cleaning docker env..."
-eval (docker-machine env -u)
+eval $(docker-machine env -u)
