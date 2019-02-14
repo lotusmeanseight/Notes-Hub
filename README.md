@@ -24,5 +24,7 @@ The end product regarding categories is still a topic to think about.
 ## The current state of the project: Building Infrastructure
 - Creating bash and docker files for Spring Boot applications and others.
 - Writing tests to see that containers are working properly
+- orchestration currently planned to be done with docker swarm, transition
+into kubernetes saved for much later.
 
 
