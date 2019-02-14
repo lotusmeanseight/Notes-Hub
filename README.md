@@ -6,11 +6,10 @@ such as discovery, gateway,
 containerization, orchestration, centralized configuration and
 hashing of secrets to build a modular project (maven multi module)
 which can transition into a microservice project in the future quite easily, one
-to build on the fundamentels of the project maintainer and two (once it's done) help
-others transition more easily into building large scale projects.
+to build on the fundamentals of the project maintainer and two (once it's done) help
+others transition more easily into building large scale projects with spring boot and spring cloud.
 
-Notes-Hub or Notes in a Graph will
-initially be a web application only.
+Notes-Hub or Notes in a Graph will initially be a web application only.
 It'll allow the user to create:
   - Hub (A collection of Notes by Users that subscribe to the Hub)
   - Notes (public notes and private notes, associated with one or more hubs)
