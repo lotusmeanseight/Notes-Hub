@@ -1,5 +1,7 @@
 # Notes-Hub (name to be changed)
 
+Develop Status [![Build Status](https://travis-ci.org/lotusmeanseight/NotesHub.svg?branch=develop)](https://travis-ci.org/lotusmeanseight/NotesHub)
+
 Notes-Hub or Notes in a Graph is supposed to be an application
 showcasing common cloud infrastructure and techniques
 such as discovery, gateway,
@@ -23,4 +25,4 @@ The end product regarding categories is still a topic to think about.
 - Creating bash and docker files for Spring Boot applications and others.
 - Writing tests to see that containers are working properly
 
-Develop Status [![Build Status](https://travis-ci.org/lotusmeanseight/NotesHub.svg?branch=develop)](https://travis-ci.org/lotusmeanseight/NotesHub)
+
