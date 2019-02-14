@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source ./create-swarm.sh
+
 # start nodes
 echo "#### starting nodes..."
 for (( i = ${start_node}; i <= ${end_node}; i++ )); do

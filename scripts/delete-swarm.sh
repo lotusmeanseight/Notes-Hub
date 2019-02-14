@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source ./create-swarm.sh
+
 # clean docker client env
 echo "#### cleaning docker env..."
 eval $(docker-machine env -u)
