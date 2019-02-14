@@ -19,7 +19,7 @@ It'll allow the user to create:
   - Categories to collect tags and associate a hub
   with the category instead of spamming the taglist.
 
-The end product regarding categories is still a topic to think about.
+The concrete implementation regarding categories is still a topic to think about.
 
 ## The current state of the project: Building Infrastructure
 - Creating bash and docker files for Spring Boot applications and others.
